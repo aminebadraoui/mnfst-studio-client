@@ -12,11 +12,6 @@ export default defineConfig({
       }
     }
   },
-  // Add these lines
-  preview: {
-    port: 3000,
-    host: '0.0.0.0'
-  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
