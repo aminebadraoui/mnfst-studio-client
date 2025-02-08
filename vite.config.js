@@ -12,6 +12,11 @@ export default defineConfig({
       }
     }
   },
+  preview: {
+    port: 4173,
+    host: '0.0.0.0',  // This is crucial for external access
+    strictPort: true
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
