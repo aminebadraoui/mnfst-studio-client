@@ -1,0 +1,100 @@
+.sidebar-menu {
+    padding: 16px 0;
+}
+
+.projects-header {
+    padding: 0 24px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.projects-header a:hover {
+    color: #7209DB;
+}
+
+.projects-header .ant-btn {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.projects-header .ant-btn:hover {
+    color: #7209DB;
+    background: rgba(138, 25, 255, 0.1);
+}
+
+.sidebar-menu .ant-menu-item.project-item {
+    padding-left: 48px !important;
+    position: relative;
+}
+
+.sidebar-menu .ant-menu-item.project-item::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(138, 25, 255, 0.2);
+}
+
+.sidebar-menu .ant-menu-item.project-item:hover::before {
+    background: rgba(138, 25, 255, 0.4);
+}
+
+/* Add a subtle connection line from Projects to items */
+.sidebar-menu .ant-menu-item.projects-header + .ant-menu-item.project-item::before {
+    top: -32px; /* Extend line to connect with Projects header */
+}
+
+.sidebar-menu .ant-menu-submenu-title {
+    padding-left: 24px !important;
+    color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.sidebar-menu .ant-menu-submenu-selected > .ant-menu-submenu-title {
+    color: #7209DB !important;
+    background: rgba(138, 25, 255, 0.1);
+}
+
+.sidebar-menu .ant-menu-item {
+    padding-left: 24px !important;
+    margin: 4px 0 !important;
+    height: 40px !important;
+    line-height: 40px !important;
+}
+
+.sidebar-menu .ant-menu-sub {
+    background: transparent !important;
+}
+
+.sidebar-menu .ant-menu-sub .ant-menu-item {
+    padding-left: 48px !important;
+}
+
+.sidebar-menu .ant-menu-item:hover {
+    color: #7209DB !important;
+}
+
+.sidebar-menu .ant-menu-item-selected {
+    background: rgba(138, 25, 255, 0.1) !important;
+    color: #7209DB !important;
+}
+
+/* For nested submenus (products under projects) */
+.sidebar-menu .ant-menu-sub .ant-menu-submenu-title {
+    padding-left: 48px !important;
+}
+
+.sidebar-menu .ant-menu-sub .ant-menu-sub .ant-menu-item {
+    padding-left: 72px !important;
+}
+
+/* Bottom menu items */
+.sidebar-menu .ant-menu-item:last-child,
+.sidebar-menu .ant-menu-item:nth-last-child(2) {
+    margin-top: auto !important;
+} 

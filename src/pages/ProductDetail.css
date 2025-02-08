@@ -1,0 +1,284 @@
+.flowLine {
+    position: absolute;
+    left: 50%;
+    top: -24px;
+    width: 4px;
+    height: 24px;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: rgba(138, 25, 255, 0.5);
+}
+
+.flowLine::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(138, 25, 255, 0.3);
+    filter: blur(8px);
+    animation: glowPulse 2s infinite;
+}
+
+.flowLine::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgb(138, 25, 255);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: particleFlow 2s infinite;
+    box-shadow: 0 0 15px rgba(138, 25, 255, 0.8);
+}
+
+.connectionLine {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: -2px;
+    height: 2px;
+    opacity: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(138, 25, 255, 0.8) 20%,
+        rgba(138, 25, 255, 0.8) 80%,
+        transparent 100%
+    );
+    animation: connectionPulse 2s infinite;
+}
+
+/* Particle flow animation */
+@keyframes particleFlow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.5);
+        box-shadow: 0 0 20px rgba(138, 25, 255, 0.3);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, 15px) scale(1);
+        box-shadow: 0 0 25px rgba(138, 25, 255, 0.8);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -15px) scale(1);
+        box-shadow: 0 0 25px rgba(138, 25, 255, 0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px) scale(0.5);
+        box-shadow: 0 0 20px rgba(138, 25, 255, 0.3);
+    }
+}
+
+/* Glow pulse animation */
+@keyframes glowPulse {
+    0% {
+        opacity: 0;
+        transform: scaleX(1);
+        background: rgba(138, 25, 255, 0.2);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(1.5);
+        background: rgba(138, 25, 255, 0.4);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(1);
+        background: rgba(138, 25, 255, 0.2);
+    }
+}
+
+/* Connection line animation */
+@keyframes connectionPulse {
+    0% {
+        opacity: 0;
+        transform: scaleX(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0.8);
+    }
+}
+
+.detail-drawer .ant-drawer-content-wrapper {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+.detail-drawer .ant-drawer-content {
+    background: linear-gradient(to right, rgba(255,255,255,0.5), #fff) !important;
+    backdrop-filter: blur(10px);
+}
+
+.detail-drawer .ant-drawer-header {
+    border-radius: 0;
+    padding: 16px 24px;
+}
+
+.detail-drawer .ant-drawer-body {
+    padding: 32px !important;
+    overflow-y: auto;
+    height: calc(100% - 55px);
+}
+
+.pyramid-detail-view {
+    border: none;
+    background: transparent;
+    height: 100%;
+    margin: 24px 0;
+    padding-bottom: 32px;
+}
+
+.pyramid-detail-view .ant-card-head {
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.pyramid-detail-view .ant-card-body {
+    padding: 32px;
+    height: calc(100% - 57px);
+    overflow-y: auto;
+}
+
+.pyramid-detail-view .ant-collapse {
+    background: transparent;
+    margin: 32px 0;
+}
+
+.pyramid-detail-view .ant-collapse > .ant-collapse-item {
+    border-radius: 0px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.pyramid-detail-view .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.pyramid-detail-view .ant-collapse > .ant-collapse-item > .ant-collapse-content {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pyramid-detail-view .ant-collapse > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
+    padding: 32px;
+}
+
+.pyramid-detail-view .ant-divider {
+    margin: 48px 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+}
+
+.pyramid-detail-view .ant-list {
+    padding: 16px 0 48px;
+}
+
+.pyramid-detail-view .ant-collapse > .ant-collapse-item:last-child {
+    margin-bottom: 32px;
+}
+
+.pyramid-detail-view .ant-collapse-content {
+    transition: all 0.3s ease-in-out;
+}
+
+.pyramid-detail-view .ant-collapse-content .ant-card {
+    margin: 16px 0;
+}
+
+.pyramid-detail-view .ant-collapse-content .ant-card:last-child {
+    margin-bottom: 16px;
+}
+
+.pyramid-detail-view .ant-tabs-nav {
+    margin-bottom: 16px;
+    position: sticky;
+    top: 56px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 8px 0;
+}
+
+/* Smooth transition for pyramid movement */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.detail-drawer .ant-drawer-content {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Add padding to the bottom of lists to prevent cutoff */
+.pyramid-detail-view .ant-list {
+    padding-bottom: 24px;
+}
+
+/* Ensure proper spacing for the last collapse panel */
+.pyramid-detail-view .ant-collapse > .ant-collapse-item:last-child {
+    margin-bottom: 24px;
+}
+
+/* Add smooth transitions for collapse panels */
+.pyramid-detail-view .ant-collapse-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Ensure proper spacing for cards within collapse panels */
+.pyramid-detail-view .ant-collapse-content .ant-card {
+    margin-bottom: 16px;
+}
+
+.pyramid-detail-view .ant-collapse-content .ant-card:last-child {
+    margin-bottom: 0;
+}
+
+.pyramid-detail-view .ant-tabs-nav {
+    margin-bottom: 16px;
+    position: sticky;
+    top: 56px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 8px 0;
+}
+
+/* Add styles for project list hierarchy */
+.project-list-item {
+    padding-left: 48px !important;
+    position: relative;
+}
+
+.project-list-item::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(138, 25, 255, 0.2);
+}
+
+.project-list-item:hover::before {
+    background: rgba(138, 25, 255, 0.4);
+} 
